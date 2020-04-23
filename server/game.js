@@ -2,6 +2,8 @@
 let fs = require('fs')
 let readline = require('readline')
 
+//JW Apr 23 - TODO: so, this loading of packs is very static... Issue #4
+
 // Load base words into an array
 let basewords = []
 var filename = './server/words.txt'
@@ -34,16 +36,26 @@ readline.createInterface({
     terminal: false
 }).on('line', (line) => {undercoverwords.push(line)})
 
+// Load Undercover words into an array
+let undercoverwords = []
+filename = './server/nota.txt'
+readline.createInterface({
+    input: fs.createReadStream(filename),
+    terminal: false
+}).on('line', (line) => {notawords.push(line)})
+
 // Codenames Game
 class Game{
   constructor(){
     this.timerAmount = 61 // Default timer value
 
-    this.words = basewords  // Load default word pack
-    this.base = true
-    this.duet = false
-    this.undercover = false
-    this.nlss = false
+    this.words        = basewords  // Load default word pack
+
+    this.base         = true
+    this.duet         = false
+    this.undercover   = false
+    this.nlss         = false
+    this.nota         = false
 
     this.init();
 
@@ -180,6 +192,8 @@ class Game{
     if (this.duet) pool = pool.concat(duetwords)
     if (this.undercover) pool = pool.concat(undercoverwords)
     if (this.nlss) pool = pool.concat(nlsswords)
+    if (this.nota) pool = pool.concat(notawords)
+
     this.words = pool
   }
 

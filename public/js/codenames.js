@@ -182,7 +182,7 @@ buttonNLSScards.onclick = () => {
   socket.emit('changeCards', {pack:'nlss'})
 }
 
-buttonNotaCards.onclick = () => {
+buttonNotacards.onclick = () => {
   socket.emit('changeCards', {pack:'nota'})
 }
 

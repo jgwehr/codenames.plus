@@ -36,7 +36,7 @@ readline.createInterface({
     terminal: false
 }).on('line', (line) => {undercoverwords.push(line)})
 
-// Load Undercover words into an array
+// Load Nota words into an array
 let notawords = []
 filename = './server/nota.txt'
 readline.createInterface({

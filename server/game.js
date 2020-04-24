@@ -37,7 +37,7 @@ readline.createInterface({
 }).on('line', (line) => {undercoverwords.push(line)})
 
 // Load Undercover words into an array
-let undercoverwords = []
+let notawords = []
 filename = './server/nota.txt'
 readline.createInterface({
     input: fs.createReadStream(filename),

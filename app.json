@@ -1,0 +1,29 @@
+{
+  "addons": [
+    "papertrail"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "description": "A Slack integration to the Rally Project Management tool",
+  "env": {
+    "PAPERTRAIL_API_TOKEN": {
+      "required": true
+    },
+    "NODE_ENV": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "image": "heroku/nodejs",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "name": "rally-slacker",
+  "scripts": {
+  }
+}

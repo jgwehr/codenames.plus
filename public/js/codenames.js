@@ -42,10 +42,15 @@ let buttonModeTimed = document.getElementById('mode-timed')
 let buttonAbout = document.getElementById('about-button')
 let buttonAfk = document.getElementById('not-afk')
 let buttonServerMessageOkay = document.getElementById('server-message-okay')
+
+// Card packs
 let buttonBasecards = document.getElementById('base-pack')
 let buttonDuetcards = document.getElementById('duet-pack')
 let buttonUndercovercards = document.getElementById('undercover-pack')
 let buttonNLSScards = document.getElementById('nlss-pack')
+let buttonNotacards = document.getElementById('nota-pack')
+
+
 // Slider
 let timerSlider = document.getElementById('timer-slider')
 let timerSliderLabel = document.getElementById('timer-slider-label')
@@ -175,6 +180,10 @@ buttonUndercovercards.onclick = () => {
 // User Clicks card pack
 buttonNLSScards.onclick = () => {
   socket.emit('changeCards', {pack:'nlss'})
+}
+
+buttonNotacards.onclick = () => {
+  socket.emit('changeCards', {pack:'nota'})
 }
 
 // When the slider is changed
@@ -332,12 +341,19 @@ function updateTimerSlider(game, mode){
 function updatePacks(game){
   if (game.base) buttonBasecards.className = 'enabled'
   else buttonBasecards.className = ''
+
   if (game.duet) buttonDuetcards.className = 'enabled'
-  else buttonDuetcards.className = ''
+    else buttonDuetcards.className = ''
+
   if (game.undercover) buttonUndercovercards.className = 'enabled'
-  else buttonUndercovercards.className = ''
+    else buttonUndercovercards.className = ''
+
   if (game.nlss) buttonNLSScards.className = 'enabled'
-  else buttonNLSScards.className = ''
+    else buttonNLSScards.className = ''
+
+  if (game.nota) buttonNotacards.className = 'enabled'
+    else buttonNotacards.className = ''
+
   document.getElementById('word-pool').innerHTML = "Word Pool: " + game.words.length
 }
 

@@ -96,6 +96,7 @@
   font-size: 25px;
   background: #F8FDFF;
   color: #323032;
+  text-transform: uppercase;
 }
 
 #board .row .tile:hover{

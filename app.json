@@ -1,4 +1,10 @@
 {
+  "name": "codenames.plus",
+  "description": "nodejs server for multiplayer codenames webapp game",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs",
+  
   "addons": [
     "papertrail"
   ],
@@ -7,7 +13,6 @@
       "url": "heroku/nodejs"
     }
   ],
-  "description": "A Slack integration to the Rally Project Management tool",
   "env": {
     "PAPERTRAIL_API_TOKEN": {
       "required": true
@@ -21,9 +26,6 @@
       "quantity": 1
     }
   },
-  "image": "heroku/nodejs",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
-  "name": "rally-slacker",
   "scripts": {
   }
 }
